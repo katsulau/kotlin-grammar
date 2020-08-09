@@ -1,5 +1,7 @@
 package service
 
+import model.Singleton.EnglishGreeter
+import model.greeter.JapaneseGreeter
 import model.person.Person
 
 class PersonService {
@@ -14,5 +16,24 @@ class PersonService {
         person1.eat()
 
         println("finish")
+    }
+
+
+    fun greet() {
+
+        val englishGreeter: EnglishGreeter = EnglishGreeter
+
+        englishGreeter.greet()
+
+        // englishGreeterと参照値同じになる!
+        val englishGreeter2: EnglishGreeter = EnglishGreeter
+
+        englishGreeter2.greet()
+
+        EnglishGreeter.greet()
+
+        val japaneseGreeter = JapaneseGreeter()
+
+        japaneseGreeter.greet()
     }
 }

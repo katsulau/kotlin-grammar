@@ -1,12 +1,13 @@
 import model.car.NormalCar
 import model.sample.HigherOrderFunction
-import service.FizzBuzzService
-import service.PersonService
-import service.SampleService
-import service.UserService
+import service.*
 
-fun main() {
-    val personService = PersonService()
+fun main(
+) {
+    val personService =  PersonService()
+    val sampleService = SampleService()
+    val fizzBuzzService = FizzBuzzService()
+    val animalService = AnimalService()
 
     personService.createPerson()
 
@@ -15,19 +16,11 @@ fun main() {
     skyline.canListenMusic()
     skyline.run()
 
-
-    val sampleService = SampleService()
-
     sampleService.checkBasicGrammar()
-
 
     sampleService.checkArrayAndList()
 
-
-    val fizzBuzzService = FizzBuzzService()
-
     fizzBuzzService.outputFizzBuzzWithWhen()
-
 
     val higherOrderFunction = HigherOrderFunction()
 
@@ -36,5 +29,7 @@ fun main() {
     UserService.findUserId(token = "aaa")
     UserService.findUserId(token = "ccc")
 
+    animalService.createDog()
 
+    personService.greet()
 }
